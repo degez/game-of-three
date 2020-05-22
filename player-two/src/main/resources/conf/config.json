@@ -1,0 +1,8 @@
+{
+  "opponent.move.handler.address" : "com.yucel.ai.move.player.one",
+  "my.move.handler.address" : "com.yucel.ai.move.player.two",
+  "my.manual.move.handler.address" : "com.yucel.manual.move.player.two",
+  "game.mode.handler.address" : "com.yucel.is.game.mode.auto.player.two",
+  "game.status.handler.address" : "com.yucel.game.status.player.two",
+  "game.status.handler.opponent.address" : "com.yucel.game.status.player.one"
+}

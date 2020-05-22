@@ -1,0 +1,28 @@
+package com.yucel.challenge.gameofthree.service;
+
+import io.vertx.core.Vertx;
+import io.vertx.junit5.VertxExtension;
+import io.vertx.junit5.VertxTestContext;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(VertxExtension.class)
+public class GameMoveVerticleTest {
+
+  @BeforeEach
+  void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
+    vertx.deployVerticle(new GameMoveVerticle(), testContext.succeeding(id -> testContext.completeNow()));
+  }
+
+  @Test
+  void verticle_deployed(Vertx vertx, VertxTestContext testContext) throws Throwable {
+    testContext.completeNow();
+  }
+
+  @AfterEach
+  void close(Vertx vertx, VertxTestContext testContext){
+    vertx.close(voidAsyncResult -> testContext.completeNow());
+  }
+}
